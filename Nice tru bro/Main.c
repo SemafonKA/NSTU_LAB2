@@ -33,6 +33,6 @@ int main() {
    } while (fabs(s - s2) > epsilon);
 
    printf("%lf\n", s);
-   printf("%u ", n / 2);
+
    return 0;
 }
