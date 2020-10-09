@@ -16,22 +16,21 @@
 int main() {
    double s = 1, s2 = 0;
    unsigned int n = 2, i;
-   unsigned short k;
-   int a = 0, b = 1;
+   double a = 0, b = 1;
    double epsilon, h = 0;
 
    scanf_s("%lf", &epsilon);
 
    do {
-      h = (b - a) / (double)n;
-      k = 1; i = 1;
+      h = (b - a) / n;
+      i = 1;
       s2 = s; 
       s = 1 + 4*((1 / (1 + (n - 1) * h + a))) + 0.5;
       
       while(i <= n - 2) {
-         s += (1 / (1 + i * h + a)) * 2 * (k % 2 + 1);
+         s += (1 / (1 + i * h + a)) * 4 + (1 / (1 + (i + 1) * h + a)) * 2;
          
-         i++; k++;
+         i += 2;
       };
       n *= 2;
       s *= h / 3;
